@@ -1,0 +1,307 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.ColorPicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToolBar?>
+<?import javafx.scene.control.Tooltip?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.SVGPath?>
+<?import javafx.scene.text.Font?>
+<?import org.controlsfx.control.textfield.CustomTextField?>
+<?import org.controlsfx.glyphfont.Glyph?>
+
+<AnchorPane fx:id="anchorpane" nodeOrientation="LEFT_TO_RIGHT" prefHeight="417.0" prefWidth="628.0" styleClass="bg" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="musiclib.Controller.Controller">
+    <stylesheets>
+        <URL value="@Style/main.css" />
+    </stylesheets>
+    <TabPane fx:id="tabPane" layoutX="-8.0" layoutY="-6.0" prefHeight="424.0" prefWidth="634.0" side="LEFT" styleClass="vTabPane" tabClosingPolicy="UNAVAILABLE">
+        <Tab fx:id="tab" closable="false">
+            <graphic>
+                <Pane prefHeight="76.0" prefWidth="30.0">
+                    <Label layoutX="-35.0" layoutY="23.0" prefHeight="30.0" prefWidth="130.0" styleClass="font-style" text="Listar Musicas">
+                        <font>
+                            <Font name="SansSerif Regular" size="14.0" />
+                        </font>
+                        <graphic>
+                            <Glyph fontFamily="FontAwesome" icon="BARS" styleClass="font-icons" />
+                        </graphic>
+                    </Label>
+                </Pane>
+            </graphic>
+
+            <AnchorPane prefHeight="293.0" prefWidth="189.0">
+                <ToolBar fx:id="barSearch" layoutX="-1.0" styleClass="toolbar">
+                    <items>
+                        <Button fx:id="btn_search" mnemonicParsing="false" onAction="#musicSearch" prefHeight="33.0" prefWidth="35.0" styleClass="btn">
+                        <graphic>
+                            <Glyph fontFamily="FontAwesome" fontSize="15" icon="SEARCH" styleClass="svg-icons" />
+                        </graphic>
+                        <tooltip>
+                            <Tooltip text="Buscar" />
+                        </tooltip>
+                        </Button>
+                        <CustomTextField fx:id="search" />
+
+                        <Button fx:id="btn_search_before" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#searchBefore" prefHeight="20.0" prefWidth="20.0" styleClass="btn">
+                            <graphic>
+                                <Glyph fontFamily="FontAwesome" fontSize="15" icon="CARET_LEFT" styleClass="svg-icons" />
+                            </graphic>
+                            <tooltip>
+                                <Tooltip text="Retroceder" />
+                            </tooltip>
+                        </Button>
+                        <Label fx:id="labelindexsearch" layoutX="10.0" layoutY="10.0" styleClass="font-style">
+                            <font>
+                                <Font size="12.0" />
+                            </font>
+                        </Label>
+                        <Button fx:id="btn_search_next" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#searchNext" prefHeight="20.0" prefWidth="20.0" styleClass="btn">
+                            <graphic>
+                                <Glyph fontFamily="FontAwesome" fontSize="15" icon="CARET_RIGHT" styleClass="svg-icons" />
+                            </graphic>
+                            <tooltip>
+                                <Tooltip text="Retroceder" />
+                            </tooltip>
+                        </Button>
+                        <Label fx:id="labelindexsearch2" layoutX="70.0" layoutY="56.0" styleClass="font-style">
+                            <font>
+                                <Font size="12.0" />
+                            </font>
+                        </Label>
+                    </items>
+                </ToolBar>
+                <Button fx:id="btn_first" layoutX="127.0" layoutY="272.0" mnemonicParsing="false" onAction="#firtMusic" prefHeight="33.0" prefWidth="35.0" styleClass="btn">
+                    <graphic>
+                        <SVGPath content="M20.879,5.249c-0.668-0.328-1.518-0.242-2.107,0.217L12.4,10.422c-0.49,0.382-0.771,0.957-0.771,1.578       s0.281,1.196,0.772,1.578l6.372,4.957c0.595,0.462,1.41,0.558,2.107,0.217C21.56,18.418,22,17.713,22,16.955v-9.91       C22,6.287,21.56,5.582,20.879,5.249z M20,16.956l-6.371-4.955L20,7.045L20,16.956z M7,3       H5C3.897,3,3,3.896,3,5v14c0,1.103,0.897,2,2,2h2c1.103,0,2-0.897,2-2V5C9,3.896,8.103,3,7,3z M5,19V5       h2l0.001,14H5z" layoutX="132.0" layoutY="276.0" styleClass="svg-icons" />
+                    </graphic>
+                    <tooltip>
+                        <Tooltip text="Inicio" />
+                    </tooltip>
+                </Button>
+                <Button fx:id="btn_next" layoutX="178.0" layoutY="272.0" mnemonicParsing="false" onAction="#beforeMusic" prefHeight="33.0" prefWidth="35.0" styleClass="btn">
+                    <graphic>
+                        <SVGPath content="M 18.879 5.249 c -0.668 -0.328 -1.518 -0.242 -2.107 0.217 L 10.4 10.422 C 9.91 10.804 9.629 11.379 9.629 12 s 0.281 1.196 0.772 1.578 l 6.372 4.957 c 0.595 0.462 1.409 0.558 2.107 0.217 C 19.56 18.418 20 17.713 20 16.955 v -9.91 C 20 6.287 19.56 5.582 18.879 5.249 Z M 18 16.956 l -6.371 -4.955 L 18 7.045 L 18 16.956 Z M 14.625 4.781 L 13.375 3.22 l -10 8 C 3.138 11.409 3 11.696 3 12 s 0.138 0.592 0.375 0.781 l 10 8 l 1.249 -1.562 L 5.601 12 L 14.625 4.781 Z" layoutX="132.0" layoutY="276.0" styleClass="svg-icons" />
+                    </graphic>
+                    <tooltip>
+                        <Tooltip text="Retroceder" />
+                    </tooltip>
+                </Button>
+                <Button fx:id="btn_before" layoutX="251.0" layoutY="272.0" mnemonicParsing="false" onAction="#nextMusic" prefHeight="33.0" prefWidth="35.0" styleClass="btn">
+                    <graphic>
+                        <SVGPath content="M 14.371 12 c 0 -0.621 -0.281 -1.196 -0.772 -1.578 L 7.228 5.466 C 6.639 5.008 5.789 4.922 5.121 5.249 C 4.44 5.582 4 6.287 4 7.045 v 9.91 c 0 0.758 0.44 1.463 1.121 1.797 c 0.692 0.338 1.506 0.25 2.107 -0.217 l 6.372 -4.957 C 14.09 13.196 14.371 12.621 14.371 12 Z M 6 16.955 l 0 -9.91 L 12.372 12 L 6 16.955 Z M 20.625 11.22 l -10 -8 L 9.375 4.781 L 18.399 12 l -9.024 7.22 l 1.249 1.562 l 10 -8 C 20.862 12.592 21 12.304 21 12 S 20.862 11.409 20.625 11.22 Z" layoutX="132.0" layoutY="276.0" styleClass="svg-icons" />
+                    </graphic>
+                    <tooltip>
+                        <Tooltip text="Avançar" />
+                    </tooltip>
+                </Button>
+                <TextField fx:id="musica" layoutX="46.0" layoutY="66.0" prefHeight="25.0" prefWidth="371.0" />
+                <TextField fx:id="artista" layoutX="46.0" layoutY="113.0" prefHeight="25.0" prefWidth="299.0" />
+                <TextField fx:id="ano" layoutX="376.0" layoutY="113.0" prefHeight="25.0" prefWidth="42.0" text="2000" />
+                <Button fx:id="btn_last" layoutX="305.0" layoutY="272.0" mnemonicParsing="false" onAction="#lastMusic" prefHeight="33.0" prefWidth="35.0" styleClass="btn">
+                    <graphic>
+                        <SVGPath content="M 12.599 10.422 L 6.228 5.466 C 5.639 5.008 4.788 4.922 4.121 5.249 C 3.44 5.582 3 6.287 3 7.045 v 9.91 c 0 0.758 0.44 1.463 1.121 1.797 c 0.692 0.338 1.506 0.25 2.107 -0.217 l 6.372 -4.957 c 0.49 -0.382 0.771 -0.957 0.771 -1.578 S 13.09 10.804 12.599 10.422 Z M 5 16.955 l 0 -9.91 L 11.372 12 L 5 16.955 Z M 20 3 h -2 c -1.103 0 -2 0.896 -2 2 v 14 c 0 1.103 0.897 2 2 2 h 2 c 1.103 0 2 -0.897 2 -2 V 5 C 22 3.896 21.103 3 20 3 Z M 18 19 V 5 h 2 l 0.001 14 H 18 Z" layoutX="132.0" layoutY="276.0" styleClass="svg-icons" />
+                    </graphic>
+                    <tooltip>
+                        <Tooltip text="Fim" />
+                    </tooltip>
+                </Button>
+                <ChoiceBox fx:id="genero" layoutX="65.0" layoutY="161.0" prefWidth="150.0" />
+                <ChoiceBox fx:id="midia" layoutX="247.0" layoutY="161.0" prefWidth="150.0" />
+                <Label layoutX="201.0" layoutY="53.0" styleClass="font-style" text="Musica:">
+                    <graphic>
+                        <Glyph fontFamily="FontAwesome" icon="MUSIC" styleClass="font-icons" />
+                    </graphic>
+                </Label>
+                <Label layoutX="167.0" layoutY="101.0" styleClass="font-style" text="Artista:">
+                    <graphic>
+                        <Glyph fontFamily="FontAwesome" icon="USER" styleClass="font-icons" />
+                    </graphic>
+                </Label>
+                <Label layoutX="377.0" layoutY="101.0" styleClass="font-style" text="Ano:">
+                    <graphic>
+                        <Glyph fontFamily="FontAwesome" icon="CALENDAR" styleClass="font-icons" />
+                    </graphic>
+                </Label>
+                <Label layoutX="120.0" layoutY="145.0" styleClass="font-style" text="Gênero:" />
+                <Label layoutX="307.0" layoutY="145.0" styleClass="font-style" text="Mídia:" />
+                <Button fx:id="btn_save" layoutX="147.0" layoutY="214.0" mnemonicParsing="false" onAction="#musicSave" prefHeight="33.0" prefWidth="35.0" styleClass="btn">
+                    <graphic>
+                        <Glyph fontFamily="FontAwesome" fontSize="15" icon="SAVE" styleClass="svg-icons" />
+                    </graphic>
+                    <tooltip>
+                        <Tooltip text="Salvar" />
+                    </tooltip>
+                </Button>
+                <Button fx:id="btn_del" layoutX="214.0" layoutY="214.0" mnemonicParsing="false" onAction="#musicDelete" prefHeight="33.0" prefWidth="35.0" styleClass="btn">
+                    <graphic>
+                        <Glyph fontFamily="FontAwesome" fontSize="15" icon="TRASH" styleClass="svg-icons" />
+                    </graphic>
+                    <tooltip>
+                        <Tooltip text="Apagar" />
+                    </tooltip>
+                </Button>
+                <Button fx:id="btn_edit" layoutX="282.0" layoutY="214.0" mnemonicParsing="false" onAction="#musicEdit" prefHeight="33.0" prefWidth="35.0" styleClass="btn">
+                    <graphic>
+                        <Glyph fontFamily="FontAwesome" fontSize="15" icon="PENCIL" styleClass="svg-icons" />
+                    </graphic>
+                    <tooltip>
+                        <Tooltip text="Editar" />
+                    </tooltip>
+                </Button>
+            </AnchorPane>
+        </Tab>
+        <Tab fx:id="tab_add" closable="false">
+            <graphic>
+                <Pane prefHeight="76.0" prefWidth="30.0">
+                    <Label layoutX="-35.0" layoutY="23.0" prefHeight="30.0" prefWidth="130.0" styleClass="font-style" text="Adicionar Musicas">
+                        <font>
+                            <Font name="SansSerif Regular" size="14.0" />
+                        </font>
+                        <graphic>
+                            <Glyph fontFamily="FontAwesome" icon="PLUS" styleClass="font-icons" />
+                        </graphic>
+                    </Label>
+                </Pane>
+            </graphic>
+            <AnchorPane prefHeight="293.0" prefWidth="189.0">
+                <TextField fx:id="musica_add" layoutX="56.0" layoutY="87.0" prefHeight="29.0" prefWidth="300.0" />
+                <TextField fx:id="artista_add" layoutX="57.0" layoutY="156.0" prefHeight="25.0" prefWidth="299.0" />
+                <TextField fx:id="ano_add" layoutX="368.0" layoutY="87.0" prefHeight="25.0" prefWidth="42.0" text="2000" />
+                <ChoiceBox fx:id="genero_add" layoutX="58.0" layoutY="235.0" prefWidth="150.0" />
+                <ChoiceBox fx:id="midia_add" layoutX="249.0" layoutY="235.0" prefWidth="150.0" />
+                <Label layoutX="56.0" layoutY="73.0" styleClass="font-style" text="Musica:">
+                    <graphic>
+                        <Glyph fontFamily="FontAwesome" icon="MUSIC" styleClass="font-icons" />
+                    </graphic>
+                </Label>
+                <Label layoutX="58.0" layoutY="142.0" styleClass="font-style" text="Artista:">
+                    <graphic>
+                        <Glyph fontFamily="FontAwesome" icon="USER" styleClass="font-icons" />
+                    </graphic>
+                </Label>
+                <Label layoutX="368.0" layoutY="73.0" styleClass="font-style" text="Ano:">
+                    <graphic>
+                        <Glyph fontFamily="FontAwesome" icon="CALENDAR" styleClass="font-icons" />
+                    </graphic>
+                </Label>
+                <Label layoutX="62.0" layoutY="212.0" styleClass="font-style" text="Gênero:" />
+                <Label layoutX="249.0" layoutY="212.0" styleClass="font-style" text="Mídia:" />
+                <Button fx:id="btn_add_new" layoutX="211.0" layoutY="313.0" mnemonicParsing="false" onAction="#musicAdd" prefHeight="33.0" prefWidth="35.0" styleClass="btn">
+                    <graphic>
+                        <Glyph fontFamily="FontAwesome" icon="PLUS" styleClass="svg-icons" />
+                    </graphic>
+                    <tooltip>
+                        <Tooltip text="Adicionar" />
+                    </tooltip>
+                </Button>
+            </AnchorPane>
+        </Tab>
+        <Tab closable="false">
+            <graphic>
+                <Pane prefHeight="76.0" prefWidth="30.0">
+                    <Label layoutX="-35.0" layoutY="23.0" prefHeight="30.0" prefWidth="130.0" styleClass="font-style" text="Configurações">
+                        <font>
+                            <Font name="SansSerif Regular" size="14.0" />
+                        </font>
+                        <graphic>
+                            <Glyph fontFamily="FontAwesome" icon="GEAR" styleClass="font-icons" />
+                        </graphic>
+                    </Label>
+                </Pane>
+            </graphic>
+            <AnchorPane prefHeight="293.0" prefWidth="189.0">
+                <TextField fx:id="user" layoutX="59.0" layoutY="153.0" prefHeight="29.0" prefWidth="166.0" />
+                <Label layoutX="59.0" layoutY="136.0" styleClass="font-style" text="Usuário">
+                    <graphic>
+                        <Glyph fontFamily="FontAwesome" icon="USER" styleClass="font-icons" />
+                    </graphic>
+                </Label>
+                <Label layoutX="252.0" layoutY="136.0" styleClass="font-style" text="Senha">
+                    <graphic>
+                        <Glyph fontFamily="FontAwesome" icon="KEY" styleClass="font-icons" />
+                    </graphic>
+                </Label>
+                <TextField fx:id="pass" layoutX="251.0" layoutY="153.0" prefHeight="29.0" prefWidth="166.0" />
+                <TextField fx:id="host" layoutX="59.0" layoutY="86.0" prefHeight="29.0" prefWidth="166.0" />
+                <Label layoutX="59.0" layoutY="72.0" styleClass="font-style" text="Host">
+                    <graphic>
+                        <Glyph fontFamily="FontAwesome" icon="DATABASE" styleClass="font-icons" />
+                    </graphic>
+                </Label>
+                <Label layoutX="55.0" layoutY="22.0" styleClass="font-style" text="Conexão do Banco de Dados:">
+                    <font>
+                        <Font size="14.0" />
+                    </font>
+                </Label>
+                <Label layoutX="55.0" layoutY="202.0" styleClass="font-style" text="Cores do Layout:">
+                    <font>
+                        <Font size="14.0" />
+                    </font>
+                </Label>
+                <ColorPicker fx:id="colorpickertext" layoutX="59.0" layoutY="259.0" />
+                <ColorPicker fx:id="colorpickericon" layoutX="59.0" layoutY="331.0" />
+                <ColorPicker fx:id="colorpickerbg" layoutX="270.0" layoutY="259.0" />
+                <Label layoutX="55.0" layoutY="242.0" styleClass="font-style" text="Textos">
+                    <graphic>
+                        <Glyph fontFamily="FontAwesome" icon="FONT" styleClass="font-icons" />
+                    </graphic>
+                </Label>
+                <Label layoutX="55.0" layoutY="314.0" styleClass="font-style" text="Icones">
+                    <graphic>
+                        <Glyph fontFamily="FontAwesome" icon="PICTURE_ALT" styleClass="font-icons" />
+                    </graphic>
+                </Label>
+                <Label layoutX="275.0" layoutY="242.0" styleClass="font-style" text="Background">
+                    <graphic>
+                        <Glyph fontFamily="FontAwesome" icon="ARROWS" styleClass="font-icons" />
+                    </graphic>
+                </Label>
+                <Button layoutX="322.0" layoutY="385.0" mnemonicParsing="false" onAction="#saveSetings" text="Salvar" />
+                <Button layoutX="381.0" layoutY="385.0" mnemonicParsing="false" text="Cancelar" />
+            <TextField fx:id="database" layoutX="252.0" layoutY="86.0" prefHeight="29.0" prefWidth="166.0" />
+            <Label layoutX="248.0" layoutY="72.0" styleClass="font-style" text="Database">
+               <graphic>
+                  <Glyph fontFamily="FontAwesome" icon="DATABASE" styleClass="font-icons" />
+               </graphic>
+            </Label>
+            </AnchorPane>
+        </Tab>
+        <Tab closable="false">
+            <graphic>
+                <Pane prefHeight="76.0" prefWidth="30.0">
+                    <Label layoutX="-35.0" layoutY="23.0" prefHeight="30.0" prefWidth="130.0" styleClass="font-style" text="  Sobre">
+                        <font>
+                            <Font name="SansSerif Regular" size="14.0" />
+                        </font>
+                        <graphic>
+                            <Glyph fontFamily="FontAwesome" icon="INFO" styleClass="font-icons" />
+                        </graphic>
+                    </Label>
+                </Pane>
+            </graphic>
+            <AnchorPane prefHeight="293.0" prefWidth="189.0">
+            <children>
+               <Label layoutX="59.0" layoutY="22.0" styleClass="font-style" text="Sobre:">
+                  <font>
+                     <Font size="14.0" />
+                  </font>
+               </Label>
+               <Label layoutX="61.0" layoutY="74.0" prefHeight="34.0" prefWidth="366.0" styleClass="font-style" text="Trabalho realizado em java para a materia de programação em &#10;Orientação a Objetos em java&#10;ministrada pelo Profº Cid.&#10;" />
+               <Label layoutX="59.0" layoutY="147.0" styleClass="font-style" text="Grupo:">
+                  <font>
+                     <Font size="14.0" />
+                  </font>
+               </Label>
+               <Label layoutX="59.0" layoutY="193.0" styleClass="font-style" text="Fábio Xavier&#9;RA: 018076&#10;Lucas Souza&#9;RA: 016568&#10;Vitor Naidek&#9;RA:016287&#10;" />
+            </children></AnchorPane>
+        </Tab>
+    </TabPane>
+
+</AnchorPane>

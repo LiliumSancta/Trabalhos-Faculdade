@@ -1,0 +1,135 @@
+.vTabPane {
+   -fx-tab-min-width:30;
+   -fx-tab-max-width:30;
+   -fx-tab-min-height:170;
+   -fx-tab-max-height:170;
+}
+
+.tab-pane .tab-header-area .tab-header-background {
+    -fx-opacity: 1;
+}
+
+.tab{
+    -fx-background-insets: 0 1 0 1,0,0;
+}
+
+.tab-pane .tab
+{
+    -fx-background-color: #e6e6e6;
+
+}
+
+.tab-pane .tab:selected
+{
+    -fx-background-color: grey;
+}
+
+.tab .tab-label {
+    -fx-alignment: CENTER;
+    -fx-text-fill: #828282;
+    -fx-font-size: 12px;
+    -fx-font-weight: bold;
+}
+
+.tab:selected .tab-label {
+    -fx-alignment: CENTER;
+    -fx-text-fill: #96b946;
+}
+
+.root {
+    colorbuttons: red;
+    coloricons: red;
+    fontcolor: black;
+}
+
+.svg-icons {
+    -fx-text-fill: colorbuttons;
+    -fx-fill: colorbuttons;
+    -fx-background-size: 100% 100%;
+}
+
+.font-icons {
+    -fx-text-fill: coloricons;
+}
+
+.font-style {
+    -fx-text-fill: fontcolor;
+}
+
+.btn {
+	-fx-background-size: 100% 100%;
+    -fx-background-color: transparent;
+	-fx-background-repeat: no-repeat;
+}
+
+.btn:hover {
+	-fx-background-size: 100% 100%;
+    -fx-background-color: grey;
+	-fx-background-repeat: no-repeat;
+}
+
+.btn:pressed .svg-icons {
+    -fx-text-fill: black;
+    -fx-fill: black;
+    -fx-background-size: 100% 100%;
+}
+
+/*.table-view {
+    -fx-base: #1d1d1d;
+    -fx-control-inner-background: #1d1d1d;
+    -fx-background-color: #1d1d1d;
+    -fx-table-cell-border-color: transparent;
+    -fx-table-header-border-color: transparent;
+    -fx-padding: 5;
+}
+
+.table-view .column-header-background {
+    -fx-background-color: transparent;
+}
+
+.table-view .column-header, .table-view .filler {
+    -fx-size: 25;
+    -fx-border-width: 0 0 0 0;
+    -fx-border-color:
+        transparent
+        transparent
+        derive(-fx-base, 80%)
+        transparent;
+    -fx-border-insets: 0 0 0 0;
+}
+
+.table-view .column-header .label {
+    -fx-text-fill: white;
+    -fx-alignment: center;
+    -fx-opacity: 1;
+}
+
+.table-view:focused .table-row-cell:filled:focused:selected {
+    -fx-background-color: -fx-focus-color;
+}*/
+
+.text-field{
+    -fx-alignment: center;
+    -fx-font-align: left;
+    -fx-border-width: 0 0 1 0;
+    -fx-border-color:
+            transparent
+            transparent
+            derive(-fx-base, 80%)
+            transparent;
+    -fx-border-insets: 0 0 1 0;
+    -fx-base: colorbuttons;
+    -fx-control-inner-background: transparent;
+    -fx-background-color: transparent;
+    -fx-padding: 5;
+    -fx-text-fill: fontcolor;
+}
+
+.toolbar{
+    -fx-border-color:
+        transparent
+        transparent
+        transparent
+        transparent;
+    -fx-background-color: transparent;
+}
