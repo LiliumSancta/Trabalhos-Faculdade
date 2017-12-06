@@ -29,12 +29,12 @@ public class Controller {
     @FXML private Label labelindexsearch;
     @FXML private Label labelindexsearch2;
     @FXML private Button btn_search_next;
-    @FXML private Button btn_search_before;
+    @FXML private Button btn_search_previous;
     @FXML private Button btn_save;
     @FXML private Button btn_edit;
     @FXML private Button btn_first;
     @FXML private Button btn_next;
-    @FXML private Button btn_before;
+    @FXML private Button btn_previous;
     @FXML private Button btn_last;
     @FXML private TextField musica_add;
     @FXML private TextField artista_add;
@@ -106,7 +106,7 @@ public class Controller {
 
             labelindexsearch.setText(index_search != null && index_search.length > 0 ? String.valueOf(index_s+1) : "");
             btn_search_next.setDisable(index_search == null || index_search.length <= 0);
-            btn_search_before.setDisable(index_search == null || index_search.length <= 0);
+            btn_search_previous.setDisable(index_search == null || index_search.length <= 0);
 
             btn_del.setDisable(false);
             btn_search.setDisable(false);
@@ -114,7 +114,7 @@ public class Controller {
 
             btn_first.setDisable(false);
             btn_next.setDisable(false);
-            btn_before.setDisable(false);
+            btn_previous.setDisable(false);
             btn_last.setDisable(false);
 
         }else{
@@ -130,12 +130,12 @@ public class Controller {
             btn_del.setDisable(true);
             btn_search.setDisable(true);
             btn_search_next.setDisable(true);
-            btn_search_before.setDisable(true);
+            btn_search_previous.setDisable(true);
             btn_edit.setDisable(true);
 
             btn_first.setDisable(true);
             btn_next.setDisable(true);
-            btn_before.setDisable(true);
+            btn_previous.setDisable(true);
             btn_last.setDisable(true);
 
         }
@@ -183,7 +183,7 @@ public class Controller {
     }
 
     @FXML
-    private void searchBefore(){
+    private void searchPrevious(){
         if (index_s > 0) {
             index_s--;
             index = index_search[index_s];
@@ -240,7 +240,7 @@ public class Controller {
     }
 
     @FXML
-    private void beforeMusic() {
+    private void previousMusic() {
         if (this.index > 0) {
             this.index -= 1;
         }
