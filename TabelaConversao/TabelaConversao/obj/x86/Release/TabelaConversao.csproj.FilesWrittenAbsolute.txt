@@ -1,0 +1,6 @@
+/home/liliumsancta/Documentos/TabelaConversao/TabelaConversao/obj/x86/Release/.NETFramework,Version=v4.5.AssemblyAttribute.cs
+/home/liliumsancta/Documentos/TabelaConversao/TabelaConversao/obj/x86/Release/TabelaConversao.gtk-gui.gui.stetic
+/home/liliumsancta/Documentos/TabelaConversao/TabelaConversao/bin/Release/TabelaConversao.exe.mdb
+/home/liliumsancta/Documentos/TabelaConversao/TabelaConversao/bin/Release/TabelaConversao.exe
+/home/liliumsancta/Documentos/TabelaConversao/TabelaConversao/obj/x86/Release/TabelaConversao.exe
+/home/liliumsancta/Documentos/TabelaConversao/TabelaConversao/obj/x86/Release/TabelaConversao.exe.mdb

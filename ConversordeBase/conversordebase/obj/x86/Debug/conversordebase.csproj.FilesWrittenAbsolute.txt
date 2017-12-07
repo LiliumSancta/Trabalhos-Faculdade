@@ -1,0 +1,10 @@
+/home/liliumsancta/Documentos/conversordebase2/conversordebase/obj/x86/Debug/.NETFramework,Version=v4.6.1.AssemblyAttribute.cs
+/home/liliumsancta/Documentos/conversordebase2/conversordebase/obj/x86/Debug/conversordebase.gtk-gui.gui.stetic
+/home/liliumsancta/Documentos/conversordebase2/conversordebase/bin/Debug/conversordebase.exe.mdb
+/home/liliumsancta/Documentos/conversordebase2/conversordebase/bin/Debug/conversordebase.pdb
+/home/liliumsancta/Documentos/conversordebase2/conversordebase/bin/Debug/conversordebase.exe
+/home/liliumsancta/Documentos/conversordebase2/conversordebase/obj/x86/Debug/conversordebase.exe
+/home/liliumsancta/Documentos/conversordebase2/conversordebase/obj/x86/Debug/conversordebase.exe.mdb
+/home/liliumsancta/Documentos/conversordebase2/conversordebase/obj/x86/Debug/conversordebase.pdb
+/home/liliumsancta/Documentos/conversordebase2/conversordebase/obj/x86/Debug/.NETFramework,Version=v4.0.AssemblyAttribute.cs
+/home/liliumsancta/Documentos/conversordebase2/conversordebase/obj/x86/Debug/.NETFramework,Version=v4.5.AssemblyAttribute.cs
