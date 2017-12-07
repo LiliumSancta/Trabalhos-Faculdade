@@ -1,0 +1,140 @@
+﻿<html>
+	<head>
+		<script type="text/javascript"/>
+			function Lista() { // Criando Objeto Lista
+				this.lista = new Array();
+				
+				this.InserirInicio = function (obj) { //Metodo para inserir dados no inicio da lista
+					this.lista.splice(0,0,obj);
+				}
+				this.InserirPos = function (obj, pos) { //Metodo para inserir dados no indice da lista especificado
+					this.lista.splice(pos-1,0,obj);
+				}
+				this.InserirFim = function (obj) { //Metodo para inserir dados no final da lista
+					this.lista[this.lista.length] = obj;
+				}
+				this.RemovePos = function(pos) { //Metodo para remover dados da lista no indice especificado
+					if(pos<(this.lista.length+1))
+					this.lista.splice((pos-1),1);
+				}
+				this.SizeofLista = function(){ //Metodo que retorna tamanho da lista
+					return this.lista.length;
+				}
+				this.Percorre = function(i){ //Metodo que retorna um elemento da lista especificado
+					return this.lista[i];
+				}
+				this.clear = function(){ //Metodo que apaga totalmente a lista
+					this.lista.splice(0,this.lista.length);
+				}
+			}
+			
+			function Insert(){ //Função para interceptar os dados na lista com valores selecionados no formulário
+				var nome  = document.forms['FormConvidados']['Nome'].value;
+				var opt   = document.getElementsByName('Option'); //document.forms['FormConvidados']['Option'].value; Compatibilidade com Microsoft Edge e Internet Explorer
+				var index = document.forms['FormConvidados']['Index'].value;
+				
+				if (!nome){
+					alert("Digite o nome a ser inserido.");
+					return false; //Inserido para impedir a limpeza do formulário
+				}
+				else if (opt[0].checked){
+					minhalista.InserirInicio(nome); //Chamando metodo que insere dados no inicio do objeto minhalista
+				}
+				else if (opt[1].checked){
+					if (!index){
+						alert("Insira o local onde o nome será adicionado.");
+						return false; //Inserido para impedir a limpeza do formulário
+					}else{
+						minhalista.InserirPos(nome, index); //Chamando metodo que insere dados no indice especificado do objeto minhalista
+					}
+				}
+				else if (opt[2].checked){
+					minhalista.InserirFim(nome); //Chamando metodo que insere dados no final do objeto minhalista
+				}
+				else{
+					alert("Selecione o local a ser inserido.");
+					return false; //Inserido para impedir a limpeza do formulário
+				}
+			
+				document.forms['FormConvidados']['Nome'].value = ''; //Limpando campo Nome do formulário
+				GerarTabela(); //Gerando nova tabela com os novos valores do objeto minhalista
+				return false; //Impedindo que o form seja realmente enviado e as variaveis sejam limpas com o refresh da página
+			}
+			function Clear(){ //Função que executa a limpeza do formulário, tabela e objeto minhalista
+				var nome = document.forms['FormConvidados']['Nome'].value;
+				document.forms['FormConvidados']['Nome'].value = '';
+				document.forms['FormConvidados']['Index'].value = '';
+				document.forms['FormConvidados']['Option1'].checked = false;
+				document.forms['FormConvidados']['Option2'].checked = false;
+				document.forms['FormConvidados']['Option3'].checked = false;
+				minhalista.clear(); //Chamando metodo para limpeza da lista
+				GerarTabela(); //Gerando nova tabela com os novos valores do objeto minhalista
+				return false; //Impedindo que o form seja realmente enviado.
+			}
+			function Remove(pos){ //Função que remove do objeto minhalista e tabela a posição especificada
+				minhalista.RemovePos(pos); //Chamando metodo para remover indice do objeto minhalista
+				GerarTabela(); //Gerando nova tabela com os novos valores do objeto minhalista
+			}
+			function GerarTabela(){ //Função para criação de tabela dinâmica em javascript
+				var table = document.getElementById('TabelaConvidados');
+				var rowCount = table.rows.length;
+				for (var i = 1; i < rowCount; i++) 
+				    table.deleteRow(1);
+				for (var i = 1; i <= minhalista.SizeofLista(); i++) {
+					var table = document.getElementById("TabelaConvidados");
+					var row = table.insertRow(i);
+					var cell1 = row.insertCell(0);
+					var cell2 = row.insertCell(1);
+					var cell3 = row.insertCell(2);
+					cell1.innerHTML = minhalista.Percorre(i-1);
+					cell2.innerHTML = i;
+					cell3.innerHTML = '<button type="button" onclick="Remove(this.parentNode.parentNode.rowIndex)">Apagar</button>';
+				}
+			}
+		</script>
+	</head>
+	
+	<body align="center">
+	<h1 align="center">Lista de Convidados</h1>
+	<form id="FormConvidados" action="#" onsubmit="return Insert()" onreset="return Clear()">
+	<table id="Tabela" align="center" width=500 cellpadding=5 cellspacing=5 border=1 >
+		<tr>
+			<td>
+				<p align="left">
+					Nome: <input id="Nome" size=27 name="Nome" type="text">
+					Local: <input id="Index" size=5 name="Index" type="text">
+				</p>
+				
+			</td>
+			<td rowspan=2>
+				<input id="Option1" type="radio" name="Option" value="Inicio"><label for="Option1">Inicio</label><br/>
+				<input id="Option2" type="radio" name="Option" value="Meio"><label for="Option2">Meio</label><br/>
+				<input id="Option3" type="radio" name="Option" value="Final"><label for="Option3">Final</label><br/>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<p align="right">
+					<input id="Enviar" name="Inserir" value="Inserir" type="submit"> 
+					<input id="Apagar" name="Apagar" value="Apagar lista" type="reset">
+				</p>
+			</td>
+		</tr>
+	</table>
+	</form>
+	<table id="TabelaConvidados" align="center" cellpadding=2 cellspacing=2 border=1 >
+		<tr>
+			<th>Nomes</th>
+			<th>Local</th>
+			<th>Apagar</th>
+		</tr>
+	</table>
+		<script type="text/javascript"/>
+			var minhalista = new Lista(); // Criando objeto minhalista
+			minhalista.InserirInicio("Vitor José Naidek"); //Inserido apenas para testes
+			minhalista.InserirInicio("Fábio Xavier Veloso Antunes"); //Inserido apenas para testes
+			minhalista.InserirInicio("Lucas Dias de Souza"); //Inserido apenas para testes
+			GerarTabela(); //Gerando Tabela com os atuais dados do objeto minhalista
+		</script>
+	</body>
+</html>
